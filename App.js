@@ -1,14 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet } from 'react-native';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import firebase from 'firebase';
+import ReduxThunk from 'redux-thunk';
+import reducers from './src/reducers';
+import Router from './Router';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+class App extends Component {
+  componentDidMount(){
+    const firebaseConfig = {
+      apiKey: "AIzaSyCnoVjPf9td35xXKLDPQQlFcLTunjZqxgc",
+      authDomain: "manager-b5e73.firebaseapp.com",
+      projectId: "manager-b5e73",
+      storageBucket: "manager-b5e73.appspot.com",
+      messagingSenderId: "645014062758",
+      appId: "1:645014062758:web:f4b03498823a3df926d667",
+      measurementId: "G-7S877BVD28"
+    };
+    firebase.initializeApp(firebaseConfig);
+  }
+
+  render() {
+      const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+    return (
+      <Provider store={store}>
+        <Router />
+      </Provider>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -19,3 +39,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;

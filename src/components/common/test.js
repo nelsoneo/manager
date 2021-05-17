@@ -1,0 +1,1 @@
+function f5() { gx.evt.execEvt('',false,'E\'ATUALIZAR\'.',this); } function anular() { decisao = confirm('ct_Deseja realmente anular o CFE?'); if (decisao){ gx.evt.execEvt('',false,'E\'ANULAR\'.',this); } } function reenviar_email() { gx.evt.execEvt('',false,'E\'REENVIAREMAIL\'.',this); } function editar_digitacao() { gx.evt.execEvt('',false,'E\'EDITARDOCDIGITACAO\'.',this); }
