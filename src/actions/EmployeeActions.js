@@ -1,4 +1,4 @@
-// import {} from '../types';
+import {} from './types';
 
 export const employeeUpdate = ({ prop, value}) => {
     return {
