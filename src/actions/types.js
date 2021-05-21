@@ -5,3 +5,4 @@ export const LOGIN_USER_FAIL = 'loging_user_fail';
 export const LOGIN_USER_START = 'login_user_start';
 
 export const EMPLOYEE_UPDATE = 'employee_update';
+export const EMPLOYEE_CREATE = 'employee_create';
