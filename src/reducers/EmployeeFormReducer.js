@@ -11,7 +11,7 @@ export default ( state = INITIAL_STATE, action) => {
         case EMPLOYEE_UPDATE:
             return { ...state, [action.playload.prop]: action.playload.value };
         case EMPLOYEE_CREATE:
-            return {};
+            return INITIAL_STATE;
         default:
             return state;
     }
