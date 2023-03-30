@@ -1,0 +1,2 @@
+# manager
+curso react-native
